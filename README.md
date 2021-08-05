@@ -1,6 +1,14 @@
-### Welcome to my commit streak.
+### TODO
 
-[![Minecraftian14's GitHub stats](https://github-readme-stats.vercel.app/api?username=Minecraftian14&count_private=false)](https://github.com/Minecraftian14/)
+[![Minecraftian14's GitHub stats](https://github-readme-stats.vercel.app/api?username=Minecraftian14&count_private=false&show_icons=true)](https://github.com/Minecraftian14/)
+
+[![MyLOGGER](https://github-readme-stats.vercel.app/api/pin/?username=Minecraftian14&repo=MyLOGGER)](https://github.com/Minecraftian14/MyLOGGER)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Minecraftian14&layout=compact)](https://github.com/Minecraftian14/)
+
+
+
+
 
 <!--
 **Minecraftian14/Minecraftian14** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
