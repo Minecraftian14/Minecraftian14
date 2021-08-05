@@ -1,4 +1,6 @@
-### Hi there 👋
+### Welcome to my commit streak.
+
+[![Minecraftian14's GitHub stats](https://github-readme-stats.vercel.app/api?username=Minecraftian14&count_private=false)](https://github.com/Minecraftian14/)
 
 <!--
 **Minecraftian14/Minecraftian14** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
