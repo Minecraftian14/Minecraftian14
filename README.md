@@ -12,6 +12,7 @@
 [![MyLOGGER](https://github-readme-stats.vercel.app/api/pin/?username=Minecraftian14&repo=KIIT_Utility_Bot)](https://github.com/Minecraftian14/JarexPlugin)
 [![MyLOGGER](https://github-readme-stats.vercel.app/api/pin/?username=Minecraftian14&repo=HLTDRP)          ](https://github.com/Minecraftian14/HLTDRP)
 [![MyLOGGER](https://github-readme-stats.vercel.app/api/pin/?username=Minecraftian14&repo=Burning-Air-For-Fuel)](https://github.com/Minecraftian14/Burning-Air-For-Fuel)
+[![MyLOGGER](https://github-readme-stats.vercel.app/api/pin/?username=Minecraftian14&repo=PolytonalSynth)](https://github.com/Minecraftian14/PolytonalSynth)
 
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Minecraftian14&layout=compact)](https://github.com/Minecraftian14/)
