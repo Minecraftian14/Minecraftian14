@@ -1,0 +1,57 @@
+.card {
+  position: relative;
+  padding: 3%;
+
+  color: black;
+}
+
+.card-a {
+  text-decoration: none;
+}
+
+.card .title {
+  font-family: monospace;
+  color: cornflowerblue;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.card .sub-title {
+  font-family: monospace;
+  color: grey;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.card .desc {
+  color: black;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.card .icon {
+  font-family: monospace;
+  color: black;
+  font-size: 1.2rem;
+  margin: 0;
+  display: inline;
+}
+
+.card h1 {
+  text-align: center;
+  font-family: monospace;
+}
+
+.card-blend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.card * {
+  z-index: -1000000000000000000000;
+}

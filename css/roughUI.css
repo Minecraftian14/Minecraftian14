@@ -1,0 +1,38 @@
+.body {
+  background-color: #272727;
+}
+
+.header_head {
+  text-align: center;
+  background-color: #000000;
+  color: #aaaaff;
+  font-family: 'headerFont', monospace;
+  padding: 1px;
+}
+
+.header_body {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+
+  text-align: center;
+  background-color: #333366;
+
+  z-index: 1;
+}
+
+.header_body button, .header_body a {
+  padding: 6px 32px;
+
+  background-color: #777;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+
+  border: none;
+  border-radius: 4px;
+
+  text-decoration: none;
+  display: inline-block;
+}
