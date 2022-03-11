@@ -4,8 +4,6 @@
 
 .header_head {
   text-align: center;
-  background-color: #000000;
-  color: #aaaaff;
   font-family: 'headerFont', monospace;
   padding: 1px;
 }
@@ -17,7 +15,6 @@
   padding: 5px;
 
   text-align: center;
-  background-color: #333366;
 
   z-index: 1;
 }

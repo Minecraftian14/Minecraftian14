@@ -1,0 +1,14 @@
+.theme-white {
+  background-color: white;
+  color: black;
+}
+
+.theme-black {
+  background-color: black;
+  color: white;
+}
+
+.theme-sub-black {
+  background-color: #334044;
+  color: white;
+}
