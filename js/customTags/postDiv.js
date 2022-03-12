@@ -25,8 +25,8 @@ class PostDiv extends HTMLElement {
 
     this.innerHTML = String.format('' +
       '<div class="post post-{3}"><div class="blend post-{3}"></div>' +
-      '   <i>{0}</i>' +
-      '   <h1>{1}</h1>' +
+      '   <i class="back_title">{0}</i>' +
+      '   <h1 class="title">{1}</h1>' +
       '   {2}' +
       '</div>'
       , this.getAttribute('backTitle'), this.getAttribute('id'), this.innerHTML,

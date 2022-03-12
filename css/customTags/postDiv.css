@@ -1,22 +1,33 @@
 .post {
   position: relative;
-  padding: 3%;
+  padding: 3% 20%;
+  color: white;
+  border-bottom: solid lightblue 1px;
+  font-size: 1.3rem;
 }
 
-.post i {
-  font-size: 100%
+@media screen and (max-width: 1000px) {
+  .card {
+    padding: 3% 5%;
+  }
 }
 
-.post h1 {
+.post .back_title {
+  font-size: 1.5rem;
+  margin-left: 10%;
+}
+
+.post .title {
   text-align: center;
+  font-size: 3rem;
   font-family: monospace;
 }
 
-.post h1:before {
+.post .title:before {
   content: "__";
 }
 
-.post h1:after {
+.post .title:after {
   content: "‾‾";
 }
 
