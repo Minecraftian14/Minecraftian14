@@ -1,3 +1,4 @@
+/* That thing which holds the information related to one repository */
 .card {
   position: relative;
   padding: 3% 20%;
@@ -11,10 +12,18 @@
   }
 }
 
+/* The <a> tag within which .card is kept. Basically, it's links to the repo. */
 .card-a {
   text-decoration: none;
 }
 
+/* General props for the titles */
+.card .title, .card .sub-title {
+  text-align: center;
+  font-family: monospace;
+}
+
+/* The repo name in blue  */
 .card .title {
   font-family: monospace;
   color: cornflowerblue;
@@ -23,6 +32,7 @@
   margin: 0;
 }
 
+/* That gray Minecraftian14/repo_name thing */
 .card .sub-title {
   font-family: monospace;
   color: grey;
@@ -30,38 +40,80 @@
   margin: auto;
 }
 
-.card .desc, .card .icon {
+/* A dummy object to hold the two gray boxes (.desc and .i_holder) in one line. */
+.card .desc_holder {
+  display: flex;
+  flex-wrap: nowrap;
+  align-self: stretch;
+  /*align-items: flex-end;*/
+  align-items: stretch;
+
+  /*text-align: justify;*/
+  padding: 3%;
+}
+
+/* Formatting related to the language icon display. */
+.card .desc_holder i {
+  display: inline;
+  font-size: 5rem;
+  /*padding: 1%;*/
+}
+
+/* General properties shared within: */
+/*  - .desc: holds general description about the repository. */
+/*  - .i_holder: holds and aligns the language icon */
+/*  - .icon: a class followed by each of the language usage, stars and forks. */
+.card .desc, .card .i_holder, .card .icon {
+  display: inline;
   font-family: monospace;
   color: black;
+  text-align: left;
   padding: 3%;
   border-radius: 20px;
   /*margin: 0;*/
 }
 
-.card .desc {
+/* Read the docs of style info above */
+.card .desc, .card .i_holder {
   font-size: 1.2rem;
   background-color: #f7f7f7;
 }
 
+/* Read the docs of style info above */
+.card .desc {
+  flex-grow: 4;
+}
+
+/* Read the docs of style info above */
+.card .i_holder {
+  flex-grow: 0;
+  margin: 0 0 0 10px;
+}
+
+/* A dummy object to help align the three (lang, star, fork) icons to center */
 .card .icon_holder {
   text-align: center;
 }
 
+/* Read the docs of style info given two steps above */
 .card .icon {
-  display: inline;
   padding-top: 55px;
   padding-bottom: 2%;
 }
 
+@media screen and (max-width: 1000px) {
+  .card .forks {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+/* Probably unused now. */
 .card .icon i {
   font-size: 4rem;
 }
 
-.card h1 {
-  text-align: center;
-  font-family: monospace;
-}
-
+/* A ghost to bring a blending effect into effect, but is no longer used... */
 .card-blend {
   position: absolute;
   top: 0;

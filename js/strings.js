@@ -21,3 +21,26 @@ if (!String.replaceAll) {
     return str.replace(new RegExp(String.escapeRegExp(find), 'g'), replace);
   };
 }
+
+
+if (!String.makeTitlable) {
+  String.makeTitlable = function (str) {
+    let fin = "";
+    let flag_wasLastCharCollapsed = false;
+    for (let i = 0; i < str.length; i++) {
+      let ch = str.charAt(i);
+      if (/^[^a-zA-Z\d ]$/.test(ch)) {
+        if (flag_wasLastCharCollapsed) continue;
+        flag_wasLastCharCollapsed = true;
+        fin += ' ';
+      } else {
+        flag_wasLastCharCollapsed = false;
+        if (i > 0 && /^[A-Z]$/.test(ch) && /[^ A-Z]/.test(str.charAt(i - 1)))
+          fin += ' ';
+        fin += ch;
+      }
+    }
+    fin = fin.replace(new RegExp('[ ]+', 'g'), " ");
+    return fin;
+  };
+}

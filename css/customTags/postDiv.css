@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .card {
+  .post {
     padding: 3% 5%;
   }
 }
@@ -22,6 +22,17 @@
   font-size: 3rem;
   font-family: monospace;
 }
+
+@media screen and (max-width: 1000px) {
+  .post .title {
+    font-size: 2rem;
+  }
+
+  .post .back_title {
+    font-size: 1rem;
+  }
+}
+
 
 .post .title:before {
   content: "__";
