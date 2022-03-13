@@ -2,7 +2,7 @@
 
 [![Minecraftian14's GitHub stats](https://github-readme-stats.vercel.app/api?username=Minecraftian14&count_private=false&show_icons=true)](https://github.com/Minecraftian14/)
 
-[![](https://img.shields.io/discord/872811194170347520?color=%237289da&logoColor=%23424549)](https://discord.gg/hZnHFGvU6W)
+[![](https://img.shields.io/discord/872811194170347520?color=%237289da&logoColor=%23424549)](https://discord.gg/Ar6Zuj2m82)
 
 [![MyLOGGER](https://github-readme-stats.vercel.app/api/pin/?username=Minecraftian14&repo=MyLOGGER)        ](https://github.com/Minecraftian14/MyLOGGER)
 [![MyLOGGER](https://github-readme-stats.vercel.app/api/pin/?username=Minecraftian14&repo=JPSD)            ](https://github.com/Minecraftian14/JPSD)
