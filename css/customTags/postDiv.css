@@ -1,6 +1,6 @@
 .post {
   position: relative;
-  padding: 3% 20%;
+  padding: 3% 20% 5%;
   color: white;
   border-bottom: solid lightblue 1px;
   font-size: 1.3rem;
@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 1000px) {
   .post {
-    padding: 3% 5%;
+    padding: 3% 5% 6%;
   }
 }
 

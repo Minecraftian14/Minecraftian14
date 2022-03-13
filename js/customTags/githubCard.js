@@ -46,7 +46,7 @@ class GithubCard extends HTMLElement {
     this.innerHTML = String.format(TEMPLATE,
       json.html_url,
       String.makeTitlable(json.name), json.full_name,
-      String.replaceAll(json.description, "  ", "<br />"),
+      String.replaceAll(json.description, "  ", "<br /><br />"),
       json.language, String.replaceAll(json.language.toLowerCase(), "+", "plus"),
       json.stargazers_count, json.forks_count);
   }
@@ -63,7 +63,7 @@ class GithubCard extends HTMLElement {
         hasRequestBeenSent = true;
         console.log("RESPONSE REQUEST SENT :(");
 
-        fetch('https://api.github.com/users/Minecraftian14/repos')
+        fetch('https://api.github.com/users/Minecraftian14/repos?per_page=100')
           .then(value => value.json())
           .then(value => {
             responsex = value;

@@ -1,4 +1,4 @@
-const GITHUB_DATA = 'temp_github_user_data_made_to_reduce_api_calls_only_ever';
+const GITHUB_DATA = 'temp_github_user_repos_data_made_to_reduce_api_calls_only_ever';
 const PERMANENT = 'pseudo_permanent_cookie_making_expiry_date_property_tag';
 
 function setCookie(cookie_name, cookie_value, expiry /* in days */) {

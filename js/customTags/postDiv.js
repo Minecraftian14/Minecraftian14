@@ -20,16 +20,21 @@ class PostDiv extends HTMLElement {
     else this.removeAttribute('id');
   }
 
+  resolveBackTitle() {
+    if (this.hasAttribute('backTitle')) return '<i class="back_title">' + this.getAttribute('backTitle') + '</i>';
+    return '';
+  }
+
   constructor() {
     super();
 
     this.innerHTML = String.format('' +
       '<div class="post post-{3}"><div class="blend post-{3}"></div>' +
-      '   <i class="back_title">{0}</i>' +
+      '   {0}' +
       '   <h1 class="title">{1}</h1>' +
       '   {2}' +
       '</div>'
-      , this.getAttribute('backTitle'), this.getAttribute('id'), this.innerHTML,
+      , this.resolveBackTitle(), this.getAttribute('id'), this.innerHTML,
       PostDiv.index++ % 2 === 0 ? 'white' : 'black');
   }
 }
