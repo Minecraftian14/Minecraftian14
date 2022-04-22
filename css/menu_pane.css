@@ -1,0 +1,29 @@
+.tab_menu_bar {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+.tab_menu_bar button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab_menu_bar button:hover {
+  background-color: #ddd;
+}
+
+.tab_menu_bar button.active {
+  background-color: #ccc;
+}
+
+.tab_view {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}

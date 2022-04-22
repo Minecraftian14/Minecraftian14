@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/roughUI.css">
   <!-- CUSTOM: LOW LEVEL -->
+  <link rel="stylesheet" href="css/menu_pane.css">
+  <link rel="stylesheet" href="css/certificates.css">
   <link rel="stylesheet" href="css/customTags/postDiv.css">
   <link rel="stylesheet" href="css/customTags/githubCard.css">
 
@@ -40,11 +42,11 @@
 <header class="header_head theme-black"><h2>Minecraftian14</h2></header>
 <header class="header_body">
   <!--  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>-->
-<!--  <at-butt href="#Portfolio"></at-butt>-->
-<!--  <at-butt href="#Filler"></at-butt>-->
-<!--  <at-butt href="#IFrame"></at-butt>-->
-<!--  <at-butt href="#Feedback"></at-butt>-->
-<!--  <at-butt href="#Inputs"></at-butt>-->
+  <!--  <at-butt href="#Portfolio"></at-butt>-->
+  <!--  <at-butt href="#Filler"></at-butt>-->
+  <!--  <at-butt href="#IFrame"></at-butt>-->
+  <!--  <at-butt href="#Feedback"></at-butt>-->
+  <!--  <at-butt href="#Inputs"></at-butt>-->
 </header>
 
 <post-div backTitle="Hey there, I see you've spent a visit to my" id="Portfolio">
@@ -83,39 +85,62 @@
     <linked-badge text="LinkedIn" color='0077b5' link="https://www.linkedin.com/in/minecraftian14/"></linked-badge>
     <linked-badge text="GitHub" color='171515' link="https://github.com/Minecraftian14/"></linked-badge>
     <linked-badge text="Discord" color='5865F2' link="https://discord.gg/Ar6Zuj2m82"></linked-badge>
-    <linked-badge hidden text="YouTube" color='FF0000'
+    <linked-badge text="YouTube" color='FF0000'
                   link="https://www.youtube.com/channel/UCiIKVE37FhsXKS8Ego3EjvQ"></linked-badge>
   </div>
 </post-div>
 
+<post-div id="Tab Menu" class="tab_menu_bar">
+  <div style="text-align: center">
+    <button class="tab_menu_button" onclick="open_tab_view(event, 'Repositories')">Repositories</button>
+    <button class="tab_menu_button" onclick="open_tab_view(event, 'Certificates')">Certificates</button>
+    <button class="tab_menu_button" onclick="open_tab_view(event, 'Papers')">Papers</button>
+  </div>
+</post-div>
 
-<github-card repo="MyLOGGER"></github-card>
-<github-card repo="JPSD"></github-card>
-<github-card repo="TryCatchSuite"></github-card>
-<github-card repo="THATLANG"></github-card>
-<github-card override_name="JShorty" repo="JShortyOutlet"></github-card>
-<github-card repo="Mathobiz"></github-card>
-<github-card repo="convnetjs"></github-card>
-<github-card repo="SimplexMusic"></github-card>
-<github-card repo="FlowFieldsGen"></github-card>
-<github-card repo="ChordPlugin"></github-card>
-<github-card repo="JarexPlugin"></github-card>
-<github-card repo="Burning-Air-For-Fuel"></github-card>
-<github-card repo="HLTDRP"></github-card>
-<github-card repo="KIIT_Utility_Bot"></github-card>
-<github-card repo="StraightLines"></github-card>
-<github-card repo="PolytonalSynth"></github-card>
-<github-card repo="ProtoTilesPen"></github-card>
-<github-card repo="BotAstra"></github-card>
-  
-  
+<div id="Repositories" class="tab_view">
+  <github-card repo="MyLOGGER"></github-card>
+  <github-card repo="JPSD"></github-card>
+  <github-card repo="TryCatchSuite"></github-card>
+  <github-card repo="THATLANG"></github-card>
+  <github-card override_name="JShorty" repo="JShortyOutlet"></github-card>
+  <github-card repo="Mathobiz"></github-card>
+  <github-card repo="convnetjs"></github-card>
+  <github-card repo="SimplexMusic"></github-card>
+  <github-card repo="FlowFieldsGen"></github-card>
+  <github-card repo="ChordPlugin"></github-card>
+  <github-card repo="JarexPlugin"></github-card>
+  <github-card repo="Burning-Air-For-Fuel"></github-card>
+  <github-card repo="HLTDRP"></github-card>
+  <github-card repo="KIIT_Utility_Bot"></github-card>
+  <github-card repo="StraightLines"></github-card>
+  <github-card repo="MCXIVUtilities"></github-card>
+  <github-card repo="PolytonalSynth"></github-card>
+  <github-card repo="ProtoTilesPen"></github-card>
+  <github-card repo="BotAstra"></github-card>
+</div>
 
+<div id="Certificates" class="tab_view">
+  <p>
+    jugadsvcygusvdasg adsuicv iadgcv asigvc asigcv audgvc asidgcvas udgcva sidgcv ashdcgav jhgavs jchasv cjagv cshjvs
+    djchasv cjhasvd cjadsvc jagvc jagdcv ajcva jsdcv sjcv aj
+  </p>
+</div>
+
+<div id="Papers" class="tab_view">
+  <p>
+    djchasv cjhasvd cjadsvc jagvc jagdcv ajcva jsdcv sjcv aj
+    jugadsvcygusvdasg adsuicv iadgcv asigvc asigcv audgvc asidgcvas udgcva sidgcv ashdcgav jhgavs jchasv cjagv cshjvs
+  </p>
+</div>
 
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 <script src="js/strings.js"></script>
 <script src="js/cookieMan.js"></script>
+<script src="js/menu_pane.js"></script>
+<script src="js/certificates.js"></script>
 <script src="js/customTags/postDiv.js"></script>
 <script src="js/customTags/linkedBadge.js"></script>
 <script src="js/customTags/githubCard.js"></script>
@@ -123,15 +148,15 @@
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <script>
-    window.ga = function () {
-        ga.q.push(arguments)
-    };
-    ga.q = [];
-    ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto');
-    ga('set', 'anonymizeIp', true);
-    ga('set', 'transport', 'beacon');
-    ga('send', 'pageview')
+  window.ga = function () {
+    ga.q.push(arguments)
+  };
+  ga.q = [];
+  ga.l = +new Date;
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('set', 'transport', 'beacon');
+  ga('send', 'pageview')
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
