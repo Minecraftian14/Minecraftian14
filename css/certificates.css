@@ -1,8 +1,15 @@
 #Certificates {
-  margin: 5%;
+  margin: 0%;
   color: white;
 }
 
 #Certificates * {
   color: inherit;
+}
+
+#Certificates img {
+  margin: 1%;
+  max-height: 40%;
+  max-width: 30%;
+  object-fit: scale-down;
 }
