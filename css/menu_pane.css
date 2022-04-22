@@ -2,10 +2,12 @@
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  color: white;
 }
 
 .tab_menu_bar button {
   background-color: inherit;
+  color: inherit;
   border: none;
   outline: none;
   cursor: pointer;
