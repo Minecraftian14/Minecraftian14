@@ -1,5 +1,3 @@
-
-
 [![Minecraftian14's GitHub stats](https://github-readme-stats.vercel.app/api?username=Minecraftian14&count_private=false&show_icons=true)](https://github.com/Minecraftian14/)
 
 [![](https://img.shields.io/discord/872811194170347520?color=%237289da&logoColor=%23424549)](https://discord.gg/Ar6Zuj2m82)
@@ -15,7 +13,6 @@
 [![MyLOGGER](https://github-readme-stats.vercel.app/api/pin/?username=Minecraftian14&repo=HLTDRP)          ](https://github.com/Minecraftian14/HLTDRP)
 [![MyLOGGER](https://github-readme-stats.vercel.app/api/pin/?username=Minecraftian14&repo=Burning-Air-For-Fuel)](https://github.com/Minecraftian14/Burning-Air-For-Fuel)
 [![MyLOGGER](https://github-readme-stats.vercel.app/api/pin/?username=Minecraftian14&repo=PolytonalSynth)](https://github.com/Minecraftian14/PolytonalSynth)
-
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Minecraftian14&layout=compact)](https://github.com/Minecraftian14/)
 
