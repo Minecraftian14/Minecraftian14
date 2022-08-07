@@ -1,6 +1,6 @@
 function open_tab_view(e, tab_view_id) {
 
-  var i, tab_views, tab_menu_buttons;
+  let i, tab_views, tab_menu_buttons;
 
   tab_views = document.getElementsByClassName("tab_view");
   for (i = 0; i < tab_views.length; i++)

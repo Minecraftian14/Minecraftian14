@@ -17,10 +17,12 @@
 
 .tab_menu_bar button:hover {
   background-color: #ddd;
+  color: white;
 }
 
 .tab_menu_bar button.active {
   background-color: #ccc;
+  color: black;
 }
 
 .tab_view {
@@ -28,4 +30,8 @@
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+.default_tab_view {
+  display: block;
 }

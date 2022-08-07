@@ -26,11 +26,13 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/themes.css">
   <link rel="stylesheet" href="css/roughUI.css">
+  <link rel="stylesheet" href="css/buttons.css">
   <!-- CUSTOM: LOW LEVEL -->
   <link rel="stylesheet" href="css/menu_pane.css">
   <link rel="stylesheet" href="css/certificates.css">
   <link rel="stylesheet" href="css/customTags/postDiv.css">
   <link rel="stylesheet" href="css/customTags/githubCard.css">
+  <link rel="stylesheet" href="css/p5js/p5js.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -86,17 +88,18 @@
 </post-div>
 
 <post-div id="Tab Menu" class="tab_menu_bar" style="text-align: center">
-  <button class="tab_menu_button" onclick="open_tab_view(event, 'Repositories')">Repositories</button>
+  <button class="tab_menu_button active" onclick="open_tab_view(event, 'Repositories')">Repositories</button>
   <button class="tab_menu_button" onclick="open_tab_view(event, 'Certificates')">Certificates</button>
   <button class="tab_menu_button" onclick="open_tab_view(event, 'Papers')">Papers</button>
+  <button class="tab_menu_button" onclick="open_tab_view(event, 'Simulations')">Simulations</button>
 </post-div>
 
-<div id="Repositories" class="tab_view">
+<div id="Repositories" class="tab_view default_tab_view">
   <github-card repo="MyLOGGER"></github-card>
   <github-card repo="JPSD"></github-card>
   <github-card repo="TryCatchSuite"></github-card>
   <github-card repo="THATLANG"></github-card>
-  <github-card override_name="JShorty" repo="JShortyOutlet"></github-card>
+  <github-card repo="JShortyOutlet" override_name="JShorty"></github-card>
   <github-card repo="Mathobiz"></github-card>
   <github-card repo="convnetjs"></github-card>
   <github-card repo="SimplexMusic"></github-card>
@@ -114,6 +117,21 @@
 </div>
 
 <div id="Certificates" class="tab_view" style="text-align: center">
+  <div id="slider">
+    <a href="#" class="control_next">>></a>
+    <a href="#" class="control_prev"><</a>
+    <ul id="certsContainer">
+      <!--      <li>SLIDE 1</li>-->
+      <!--      <li style="background: #aaa;">SLIDE 2</li>-->
+      <!--      <li>SLIDE 3</li>-->
+      <!--      <li style="background: #aaa;">SLIDE 4</li>-->
+    </ul>
+  </div>
+
+  <div class="slider_option">
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox">Autoplay Slider</label>
+  </div>
 </div>
 
 <div id="Papers" class="tab_view">
@@ -121,6 +139,17 @@
     djchasv cjhasvd cjadsvc jagvc jagdcv ajcva jsdcv sjcv aj
     jugadsvcygusvdasg adsuicv iadgcv asigvc asigcv audgvc asidgcvas udgcva sidgcv ashdcgav jhgavs jchasv cjagv cshjvs
   </p>
+</div>
+
+<div id="Simulations" class="tab_view">
+  <div class="buttons">
+    <div class="button_s01" onclick="p5js_simulations[0].activate()"><span>Simple Noise</span></div>
+    <div class="button_s01" onclick="p5js_simulations[1].activate()"><span>Flow Vectors</span></div>
+    <div class="button_s01" onclick="p5js_simulations[2].activate()"><span>Simple Terrain</span></div>
+    <div class="button_s01" onclick="p5js_simulations[3].activate()"><span>2D Terrain</span></div>
+  </div>
+  <div id="pfjscontainer">
+  </div>
 </div>
 
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
@@ -135,6 +164,15 @@
 <script src="js/customTags/linkedBadge.js"></script>
 <script src="js/customTags/githubCard.js"></script>
 <script src="js/customTags/autoTitleButton.js"></script>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>-->
+<script src="js/p5js/p5.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>-->
+<script src="js/p5js/p5js_collection.js"></script>
+<script src="js/p5js/_01_simpleNoise.js"></script>
+<script src="js/p5js/_02_flowVectors.js"></script>
+<script src="js/p5js/_03_simpleTerrain.js"></script>
+<script src="js/p5js/_04_2DTerrain.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <script>
@@ -151,4 +189,6 @@
 <script src="https://www.google-analytics.com/analytics.js" async></script>
 
 </body>
+
+
 </html>

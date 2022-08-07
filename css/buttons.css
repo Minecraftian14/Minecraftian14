@@ -1,0 +1,120 @@
+/*
+How to use:
+  <div class="$CHOOSE_A_CLASS$" onclick="$YOUR_ACTION$"><span>$YOUR_BUTTON_TEXT$</span></div>
+*/
+
+/* Background shrinks on x axis */
+.button_s01 {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  width: 20%;
+  /*//*/
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  /*//*/
+  color: #FFF;
+  transition: all 0.3s;
+}
+
+.button_s01::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*//*/
+  border-top: rgba(255, 255, 255, 0.5) solid 1px;
+  border-bottom: rgba(255, 255, 255, 0.5) solid 1px;
+  /*//*/
+  content: '';
+  opacity: 0;
+  transition: all 0.3s;
+  /*//*/
+  z-index: 1;
+  transform: scale(0.1, 1);
+}
+
+.button_s01:hover span {
+  /* OMG! This is SOO cool */
+  letter-spacing: 2px;
+}
+
+.button_s01:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.button_s01::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button_s01:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
+
+.button_s01 span {
+  transition: all 0.3s;
+}
+
+/* Background shrinks */
+
+.button_s02 {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  width: 20%;
+  /*//*/
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  /*//*/
+  color: #FFF;
+  transition: all 0.5s;
+}
+
+.button_s02::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.button_s02:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.button_s02::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.2, 1.2);
+}
+
+.button_s02:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
