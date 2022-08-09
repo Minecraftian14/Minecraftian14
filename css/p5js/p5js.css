@@ -1,3 +1,5 @@
+
+
 #Simulations {
   text-align: center;
   margin-left: 10%;
@@ -9,66 +11,9 @@
   display: inline;
 }
 
-/*#Simulations .buttons div {*/
-/*  display: inline-block;*/
-/*  position: relative;*/
-/*  line-height: 50px;*/
-/*  text-align: center;*/
-/*  height: 50px;*/
-/*  width: 20%;*/
-/*  cursor: pointer;*/
-/*  !*//*/
-/*  color: #FFF;*/
-/*  transition: all 0.3s;*/
-/*}*/
-
-/*#Simulations .buttons div::before {*/
-/*  content: '';*/
-/*  position: absolute;*/
-/*  bottom: 0;*/
-/*  left: 0;*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*  z-index: 1;*/
-/*  opacity: 0;*/
-/*  transition: all 0.3s;*/
-
-/*  border-top: rgba(255, 255, 255, 0.5) solid 1px;*/
-/*  border-bottom: rgba(255, 255, 255, 0.5) solid 1px;*/
-
-/*  transform: scale(0.1, 1);*/
-/*}*/
-
-/*#Simulations .buttons div:hover span {*/
-/*  letter-spacing: 2px;*/
-/*}*/
-
-/*#Simulations .buttons div:hover::before {*/
-/*  opacity: 1;*/
-/*  transform: scale(1, 1);*/
-/*}*/
-
-/*#Simulations .buttons div::after {*/
-/*  content: '';*/
-/*  position: absolute;*/
-/*  bottom: 0;*/
-/*  left: 0;*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*  z-index: 1;*/
-/*  transition: all 0.3s;*/
-/*  background-color: rgba(255, 255, 255, 0.1);*/
-/*}*/
-
-/*#Simulations .buttons div:hover::after {*/
-/*  opacity: 0;*/
-/*  transform: scale(0.1, 1);*/
-/*}*/
-
-/*#Simulations .buttons div span {*/
-/*  transition: all 0.3s;*/
-/*}*/
-
-#Simulations div canvas {
-  /*width: 200px;*/
+#pfjsIFrame {
+  overflow: hidden;
+  width: max(500px, 100%);
+  min-height: 500px;
+  border: none;
 }

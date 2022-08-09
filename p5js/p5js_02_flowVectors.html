@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Noise</title>
+  <link rel="stylesheet" href="../css/p5js/commons.css">
+</head>
+<body>
+
+<div id="pfjscontainer">
+</div>
+
+<script src="../js/p5js/p5.js"></script>
+<script src="../js/p5js/commons.js"></script>
+
+<script>
+
+  let xyv = 0.005;
+  let z = 0;
+  let zv = 0.00001;
+
+  function setup() {
+    let cnv = createCanvas(500, 500);
+    cnv.parent('pfjscontainer');
+    frameRate(16);
+    stroke(255);
+  }
+
+  function draw() {
+    background(0,50,150);
+    for (let x = 0; x <= width; x += 10) {
+      for (let y = 0; y <= height; y += 10) {
+        let nse =  noise(x * xyv, y * xyv, z += zv) * 12;
+        let c = cos(nse) * 10, s = sin(nse) * 10;
+        line(x, y, x + c, y + s);
+      }
+    }
+  }
+
+</script>
+</body>
+</html>

@@ -1,43 +1,17 @@
-const p5js_simulations = []
+const p5js_simulations = [
+  "p5js/p5js_01_simpleNoise.html",
+  "p5js/p5js_02_flowVectors.html",
+  "p5js/p5js_03_simpleTerrain.html",
+  "p5js/p5js_04_2DTerrain.html",
+  "p5js/p5js_05_SimplePlanets.html",
+  "p5js/p5js_06_LinesShow.html",
+  "p5js/p5js_07_RadialPerlinNoise.html",
+  "p5js/p5js_08_Better2DTerrainGen.html"
+]
 
-// let setup = ()=>{
-//   console.log("Lol")
-// };
-
-function setup() {
-}
-
-function draw() {
-}
-
-function windowResized() {
-  resizeCanvas(500,500);
-}
-
-// @Warning(Context.Global)
-function setColor(x, y, r, g, b, a) {
-
-  let off = pixelDensity();
-
-  for (let i = 0; i < off; i++) {
-    for (let j = 0; j < off; j++) {
-      let coord = 4 * ((y * off + j) * width * off + (x * off + i));
-      pixels[coord/**/] = r;
-      pixels[coord + 1] = g;
-      pixels[coord + 2] = b;
-      pixels[coord + 3] = a;
-    }
-  }
-}
-
-class p5jsSimulations {
-  constructor(setup, draw) {
-    this.setup = setup;
-    this.draw = draw;
-  }
-
-  activate() {
-    setup = this.setup;
-    draw = this.draw;
-  }
+function activate_p5js_simulation(id) {
+  const iframe = document.getElementById("pfjsIFrame");
+  iframe.src = p5js_simulations[id];
+  // const iWindow   = iframe.contentWindow;
+  // const iDocument = iWindow.document;
 }

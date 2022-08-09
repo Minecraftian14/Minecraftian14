@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radial Perlin Noise</title>
+  <link rel="stylesheet" href="../css/p5js/commons.css">
+</head>
+<body>
+
+<div id="pfjscontainer">
+</div>
+
+<script src="../js/p5js/p5.js"></script>
+<script src="../js/p5js/commons.js"></script>
+
+<script>
+
+  let t = 0;
+  let tv;
+  let wb2;
+  let hb2;
+
+  let c1;
+  let c2;
+  let c3;
+
+  let cache;
+  let cache_o;
+  let cache_t;
+
+  function setup() {
+    createDefaultCanvas();
+
+    tv = radians(3);
+    wb2=width/2;
+    hb2=height/2;
+
+    c1 = color('#C125FA');
+    c2 = color('#FAA325');
+    c3 = color('#25FAC4');
+
+    cache = createVector();
+    cache_o = createVector();
+    cache_t = createVector();
+
+    noStroke();
+  }
+
+  function draw() {
+    background(20, 2);
+
+    cache_o.set(cache_t);
+    cache.set(cos(t), sin(t));
+    cache_t.set(cache);
+
+    let nse = noise(cache.x, cache.y, t);
+    t += tv;
+
+    smooth();
+
+    cache.mult(nse).mult(3).add(1, 1).mult(wb2, hb2);
+    cache_o.mult(nse).mult(3).add(1, 1).mult(wb2, hb2);
+    fill(c1);
+    triangle(wb2, hb2, cache.x, cache.y, cache_o.x, cache_o.y)
+
+    cache.sub(wb2, hb2).mult(0.5).add(wb2, hb2);
+    cache_o.sub(wb2, hb2).mult(0.5).add(wb2, hb2);
+    fill(c2);
+    triangle(wb2, hb2, cache.x, cache.y, cache_o.x, cache_o.y)
+
+    cache.sub(wb2, hb2).mult(0.5).add(wb2, hb2);
+    cache_o.sub(wb2, hb2).mult(0.5).add(wb2, hb2);
+    fill(c3);
+    triangle(wb2, hb2, cache.x, cache.y, cache_o.x, cache_o.y)
+  }
+
+</script>
+</body>
+</html>

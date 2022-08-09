@@ -143,13 +143,16 @@
 
 <div id="Simulations" class="tab_view">
   <div class="buttons">
-    <div class="button_s01" onclick="p5js_simulations[0].activate()"><span>Simple Noise</span></div>
-    <div class="button_s01" onclick="p5js_simulations[1].activate()"><span>Flow Vectors</span></div>
-    <div class="button_s01" onclick="p5js_simulations[2].activate()"><span>Simple Terrain</span></div>
-    <div class="button_s01" onclick="p5js_simulations[3].activate()"><span>2D Terrain</span></div>
+    <div class="button_s01" onclick="activate_p5js_simulation(0)"><span>Simple Noise</span></div>
+    <div class="button_s01" onclick="activate_p5js_simulation(1)"><span>Flow Vectors</span></div>
+    <div class="button_s01" onclick="activate_p5js_simulation(2)"><span>Simple Terrain</span></div>
+    <div class="button_s01" onclick="activate_p5js_simulation(3)"><span>2D Terrain</span></div>
+    <div class="button_s01" onclick="activate_p5js_simulation(4)"><span>Simple Planets</span></div>
+    <div class="button_s01" onclick="activate_p5js_simulation(5)"><span>Lines Show</span></div>
+    <div class="button_s01" onclick="activate_p5js_simulation(6)"><span>Radial Noise</span></div>
+    <div class="button_s01" onclick="activate_p5js_simulation(7)"><span>Better 2D Terrain</span></div>
   </div>
-  <div id="pfjscontainer">
-  </div>
+  <iframe scrolling="no" id="pfjsIFrame" width="400px" height="400px"></iframe>
 </div>
 
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
@@ -164,15 +167,7 @@
 <script src="js/customTags/linkedBadge.js"></script>
 <script src="js/customTags/githubCard.js"></script>
 <script src="js/customTags/autoTitleButton.js"></script>
-
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.js"></script>-->
-<script src="js/p5js/p5.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>-->
 <script src="js/p5js/p5js_collection.js"></script>
-<script src="js/p5js/_01_simpleNoise.js"></script>
-<script src="js/p5js/_02_flowVectors.js"></script>
-<script src="js/p5js/_03_simpleTerrain.js"></script>
-<script src="js/p5js/_04_2DTerrain.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <script>

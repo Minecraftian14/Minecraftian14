@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lines Show</title>
+  <link rel="stylesheet" href="../css/p5js/commons.css">
+</head>
+<body>
+
+<div id="pfjscontainer">
+</div>
+
+<script src="../js/p5js/p5.js"></script>
+<script src="../js/p5js/commons.js"></script>
+
+<script>
+
+  live_vertices = []
+  let cache;
+
+  function setup() {
+    createDefaultCanvas();
+
+    cache = createVector();
+
+    live_vertices.push(newDynamicPhysicsBody());
+    live_vertices.push(newDynamicPhysicsBody());
+    live_vertices.push(newDynamicPhysicsBody());
+
+    background(10, 0, 25);
+  }
+
+  function draw() {
+    background(10, 0, 25, 3);
+
+    let com = getCOM(live_vertices);
+    translate(com.mult(-1).add(width/2, height/2));
+
+    addForcesOfAction(live_vertices);
+
+    live_vertices.forEach(updateDynamicPhysicsBody);
+    drawVertices(live_vertices);
+  }
+
+  function mouseClicked() {
+    if (mouseButton == RIGHT) {
+      live_vertices.pop();
+    } else {
+      let vertex = newDynamicPhysicsBody();
+      vertex.pos.set(mouseX, mouseY);
+      live_vertices.push(vertex);
+    }
+  }
+
+  function keyPressed() {
+    if (keyCode === UP_ARROW)
+      live_vertices.push(newDynamicPhysicsBody());
+    else if (keyCode === DOWN_ARROW)
+      live_vertices.pop(newDynamicPhysicsBody());
+  }
+
+  drawVertices = (ps) => {
+    for (let i = ps.length - 1; i > 0; --i) {
+      let vert1 = ps[i];
+      let vert2 = ps[i - 1];
+      gradiantLine(vert1.color, vert2.color, vert1.pos.x, vert1.pos.y, vert2.pos.x, vert2.pos.y);
+    }
+    let vert1 = ps[0];
+    let vert2 = ps[ps.length - 1];
+    gradiantLine(vert1.color, vert2.color, vert1.pos.x, vert1.pos.y, vert2.pos.x, vert2.pos.y);
+  };
+
+  addForcesOfAction = (ps) => {
+    _addDependentForces = (p1, p2) => {
+      cache.set(p2.pos).sub(p1.pos);
+      let rSq = cache.magSq();
+      cache.normalize().mult(1000 * p1.mass * p2.mass / rSq).limit(10);
+      p1.acc.set(cache).div(p1.mass);
+      p2.acc.set(cache.mult(-1)).div(p2.mass);
+    }
+    for (let i = ps.length - 1; i >= 0; --i)
+      for (let j = i - 1; j >= 0; --j)
+        _addDependentForces(ps[i], ps[j]);
+    _addIndependentForces = (p) => {
+      cache.set(p.vel).mult(0.01);
+      p.acc.sub(cache);
+    }
+    ps.forEach(_addIndependentForces);
+  };
+
+  getCOM = (ps) => {
+    cache.set(0,0);
+    ps.forEach((p) => cache.add(p.pos));
+    return cache.div(ps.length);
+  };
+
+</script>
+</body>
+</html>

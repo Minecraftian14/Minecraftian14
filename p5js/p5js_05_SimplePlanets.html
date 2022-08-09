@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Planets</title>
+  <link rel="stylesheet" href="../css/p5js/commons.css">
+</head>
+<body>
+
+<div id="pfjscontainer">
+</div>
+
+<script src="../js/p5js/p5.js"></script>
+<script src="../js/p5js/commons.js"></script>
+
+<script>
+
+  // configurables
+  let G = 1000;
+  let mu = 0.01;
+
+  live_planets = []
+  let cache;
+
+  function setup() {
+    createDefaultCanvas();
+
+    cache = createVector();
+
+    live_planets.push(newPlanet());
+    live_planets.push(newPlanet());
+
+    noStroke();
+  }
+
+  function draw() {
+    background(20, 50, 80, 20);
+
+    let com = getCOM(live_planets);
+    translate(com.mult(-1).add(width / 2, height / 2));
+
+    addGravity(live_planets);
+    addFriction(live_planets);
+    // addAttraction(live_planets);
+
+    live_planets.forEach(updateDynamicPhysicsBody);
+    live_planets.forEach(drawDynamicPhysicsBody);
+  }
+
+  function mouseClicked() {
+    if (mouseButton == RIGHT) {
+      live_planets.pop();
+    } else {
+      let planet = newPlanet();
+      planet.pos.set(mouseX, mouseY);
+      live_planets.push(planet);
+    }
+  }
+
+  function keyPressed() {
+    if (keyCode === UP_ARROW)
+      live_planets.push(newPlanet());
+    else if (keyCode === DOWN_ARROW)
+      live_planets.pop(newPlanet());
+  }
+
+  newPlanet = () => {
+    p = newDynamicPhysicsBody();
+    p.shape = createCircularShape(sqrt(p.mass) * 10);
+    return p;
+  };
+
+  addGravity = (ps) => {
+    _addGravity = (p1, p2) => {
+      cache.set(p2.pos).sub(p1.pos);
+      let rSq = cache.magSq();
+      cache.normalize().mult(G * p1.mass * p2.mass / rSq).limit(10);
+      p1.acc.set(cache).div(p1.mass);
+      p2.acc.set(cache.mult(-1)).div(p2.mass);
+    }
+    for (let i = ps.length - 1; i >= 0; --i)
+      for (let j = i - 1; j >= 0; --j)
+        _addGravity(ps[i], ps[j]);
+  };
+
+  addFriction = (ps) => {
+    _addFriction = (p) => {
+      cache.set(p.vel).mult(mu);
+      p.acc.sub(cache);
+    }
+    ps.forEach(_addFriction);
+  };
+
+  // addAttraction = (ps) => {
+  //   _addAttraction = (p1, p2) => {
+  //     cache.set(p2.pos).sub(p1.pos).normalize();
+  //     p1.acc.set(cache).div(p1.mass);
+  //     p2.acc.set(cache.mult(-1)).div(p2.mass);
+  //   }
+  //   for (let i = ps.length - 1; i >= 0; --i)
+  //     for (let j = i - 1; j >= 0; --j)
+  //       _addAttraction(ps[i], ps[j]);
+  // };
+
+  getCOM = (ps) => {
+    cache.set(0, 0);
+    ps.forEach((p) => cache.add(p.pos));
+    return cache.div(ps.length);
+  };
+
+</script>
+</body>
+</html>
